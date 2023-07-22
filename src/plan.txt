@@ -14,13 +14,14 @@ Class - Library
 
 Class - Main
 
-
+Database name-Library
 Tables
-Book = bookId, -isbn
+book = bookId, -isbn
                -title
                -category
                -author
                -isAvailable
+
 
 
                create database Library;
@@ -33,6 +34,7 @@ Book = bookId, -isbn
                    author varchar(50),
                    isAvailable varchar(50)
                );
+
 
 
 

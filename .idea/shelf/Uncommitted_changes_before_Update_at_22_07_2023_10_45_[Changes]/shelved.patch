@@ -1,0 +1,113 @@
+Index: src/Thuva.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Thuva.java b/src/Thuva.java
+new file mode 100644
+--- /dev/null	(date 1690002868886)
++++ b/src/Thuva.java	(date 1690002868886)
+@@ -0,0 +1,59 @@
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.ResultSet;
++import java.sql.Statement;
++import java.util.Scanner;
++
++public class Thuva {
++    public static void removeBook() throws Exception {
++        int isbnNum;
++        String confirm;
++        Scanner scan = new Scanner(System.in);
++        System.out.println("Enter the ISBN: ");
++        isbnNum = scan.nextInt();
++        System.out.println();
++        System.out.println();
++        System.out.println("Are you sure you want to remove this book?(Y/N)");
++        confirm = scan.nextLine();
++        if (confirm.equalsIgnoreCase('Y')) {
++            Connection conn = DbConnection.getConnection();
++            String query = "delete from book where isbn = " + isbnNum;
++
++            Statement st = conn.createStatement();
++            int rows = st.executeUpdate(query);
++
++            System.out.println("Number of rows affected: " + rows);
++            conn.close();
++        }
++    }
++
++    public static void listAllBooks() throws Exception {
++        String query = "select * from book";
++        Connection conn = DbConnection.getConnection();
++
++        Statement st = conn.createStatement();
++        ResultSet rs = st.executeQuery(query);
++
++        while(rs.next()){
++            System.out.println(rs.getInt(2)+"-"+rs.getString(3)+"-"+rs.getString(4)+"-"+rs.getString(5);
++    }
++        st.close();
++}
++
++    public static void  updateBook() throws Exception{
++        Connection conn = DbConnection.getConnection();
++    }
++}
++
++
++
++        String query = "update personal set name='keerthy' where id='006'";
++
++
++        Statement st = con.createStatement();
++        int rows = st.executeUpdate(query);
++
++        con.close();
++    }
++
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64\" name=\"Changes\" comment=\"initial commit\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/plan.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/plan.txt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SuZuJTSdVLJL0i7EGEpNDYhq8q\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/dhars/JuniorHack 5.0 - TechWarriors&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64\" name=\"Changes\" comment=\"\" />\r\n      <created>1689998649679</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1689998649679</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"initial commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"initial commit\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision d0caa7a3113fee71bfd8f8674987aa5311f8d5b8)
++++ b/.idea/workspace.xml	(date 1690002860409)
+@@ -4,9 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="initial commit">
++    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="removeBook and listAllBooks done">
++      <change afterPath="$PROJECT_DIR$/src/Thuva.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/plan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/plan.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -50,10 +50,19 @@
+       <option name="presentableId" value="Default" />
+       <updated>1689998649679</updated>
+     </task>
++    <task id="LOCAL-00001" summary="removeBook and listAllBooks done">
++      <created>1690002360472</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1690002360472</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="initial commit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
++    <MESSAGE value="removeBook and listAllBooks done" />
++    <option name="LAST_COMMIT_MESSAGE" value="removeBook and listAllBooks done" />
+   </component>
+ </project>
+\ No newline at end of file

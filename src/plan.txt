@@ -14,12 +14,13 @@ Class - Library
 
 Class - Main
 
-
+Database name-Library
 Tables
-Book = bookId, -isbn
+book = bookId, -isbn
                -title
                -category
                -author
+               -isAvailable
 
 
 

@@ -244,8 +244,8 @@ public class Library {
             String authorName = scan.nextLine();
 
 
-            String query2 = "update book set title = '" + title + "', category = '" + category + "', author = '" + authorName + "'";
-            System.out.println(query2);
+            String query2 = "update book set title = '" + title + "', category = '" + category + "', author = '" + authorName + "' where isbn = '" + userISBN + "'";
+//            System.out.println(query2);
 
             int rows = statement.executeUpdate(query2);
             if (rows > 0) {

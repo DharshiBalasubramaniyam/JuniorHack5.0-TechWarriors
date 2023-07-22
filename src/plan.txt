@@ -1,0 +1,25 @@
+Class - Book
+-isbn
+-title
+-category
+-author
+
+Class - Library
+-addNewBook
+-updateBook
+-removeBook
+-LendBook
+-returnBook
+-listAllBooks
+
+Class - Main
+
+
+Tables
+Book = bookId, -isbn
+               -title
+               -category
+               -author
+
+
+

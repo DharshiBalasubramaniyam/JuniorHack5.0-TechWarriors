@@ -20,6 +20,19 @@ Book = bookId, -isbn
                -title
                -category
                -author
+               -isAvailable
+
+
+               create database Library;
+               use Library;
+               create table book (
+               	bookId int primary key auto_increment,
+                   isbn int,
+                   title varchar(50),
+                   category varchar(50),
+                   author varchar(50),
+                   isAvailable varchar(50)
+               );
 
 
 

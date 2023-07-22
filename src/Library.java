@@ -181,17 +181,28 @@ public class Library {
         System.out.print("Enter the ISBN: ");
         isbnNum = scan.next();
 
-        System.out.println("\nAre you sure you want to remove this book?(Y/N)");
-        if (confirm()) {
-            Connection conn = DBConnection.getConnection();
-            String query = "delete from book where isbn = '" + isbnNum + "'";
+        Connection connection = DBConnection.getConnection();
+        String query1 = "select * from Book where isbn= '" + isbnNum + "'";
+        Statement statement = connection.createStatement();
+        ResultSet result = statement.executeQuery(query1);
 
-            Statement st = conn.createStatement();
-            int rows = st.executeUpdate(query);
+        if (result.next()) {
+            System.out.println("\nAre you sure you want to remove this book?(Y/N)");
+            if (confirm()) {
+                Connection conn = DBConnection.getConnection();
+                String query2 = "delete from book where isbn = '" + isbnNum + "'";
 
-            System.out.println("Book removed successfully.");
-            conn.close();
+                Statement st = conn.createStatement();
+                int rows = st.executeUpdate(query2);
+
+                System.out.println("Book removed successfully.");
+                conn.close();
+            }
         }
+        else {
+        System.out.println("Sorry, There is no book in the library with the given isbn.");
+        }
+
     }
 
     public void listAllBooks() throws Exception {

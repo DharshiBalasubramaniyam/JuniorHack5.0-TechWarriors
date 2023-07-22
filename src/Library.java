@@ -74,6 +74,11 @@ public class Library {
 
         while (true) {
             isbn = scan.next();
+            while(isbn.length()!=13) {
+                System.out.print("ISBN should have 13 characters\nEnter a valid ISBN: ");
+                isbn = scan.next();
+            }
+
             String query1 = "select * from book where isbn ='" + isbn + "'";
 //            System.out.println(query1);
             ResultSet result = statement.executeQuery(query1);
@@ -175,6 +180,7 @@ public class Library {
 
         System.out.print("Enter the ISBN: ");
         isbnNum = scan.next();
+
         System.out.println("\nAre you sure you want to remove this book?(Y/N)");
         if (confirm()) {
             Connection conn = DBConnection.getConnection();
@@ -198,7 +204,7 @@ public class Library {
         ResultSet rs = st.executeQuery(query);
 
         while (rs.next()) {
-            System.out.println(rs.getString(1) + "-" + rs.getString(2) + "-" + rs.getString(3) + "-" + rs.getString(4));
+            System.out.println(rs.getString(1) + " - " + rs.getString(2) + " - " + rs.getString(3) + " - " + rs.getString(4));
         }
         st.close();
         connection.close();
@@ -227,7 +233,8 @@ public class Library {
             String authorName = scan.nextLine();
 
 
-            String query2 = "insert into book values (" + userISBN + ", '" + title + "', '" + category + "', '" + authorName + "', 'Available')";
+            String query2 = "update book set title = '" + title + "', category = '" + category + "', author = '" + authorName + "'";
+            System.out.println(query2);
 
             int rows = statement.executeUpdate(query2);
             if (rows > 0) {

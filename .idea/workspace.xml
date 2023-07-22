@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
+    <list default="true" id="34f2843d-7d2c-443e-8ee1-b8dfeb0cf8e5" name="Changes" comment="added lendbook and returnbook method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,45 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  }
-}</component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="" />
-      <created>1689998649679</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1689998649679</updated>
-    </task>
-    <task id="LOCAL-00001" summary="removeBook and listAllBooks done">
-      <created>1690002360472</created>
+    <task id="LOCAL-00001" summary="added lendbook and returnbook method">
+      <created>1690007119896</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1690002360472</updated>
+      <updated>1690007119896</updated>
     </task>
-    <task id="LOCAL-00002" summary="removeBook and listAllBooks done final">
-      <created>1690003148962</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1690003148962</updated>
-    </task>
-    <task id="LOCAL-00003" summary="removeBook and listAllBooks done final">
-      <created>1690003338325</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1690003338325</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="removeBook and listAllBooks done" />
-    <MESSAGE value="removeBook and listAllBooks done final" />
-    <option name="LAST_COMMIT_MESSAGE" value="removeBook and listAllBooks done final" />
+    <MESSAGE value="added lendbook and returnbook method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added lendbook and returnbook method" />
   </component>
 </project>

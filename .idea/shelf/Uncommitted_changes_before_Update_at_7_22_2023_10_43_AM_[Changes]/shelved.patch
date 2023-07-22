@@ -1,0 +1,349 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\r\n    public static void main(String[] args) {\r\n        System.out.println(\"Hello world!\");\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 240267ea5df5cfba26abcccd7eb7c4290d6de04d)
++++ b/src/Main.java	(date 1690001790175)
+@@ -1,5 +1,41 @@
++import java.sql.SQLException;
++
+ public class Main {
+-    public static void main(String[] args) {
+-        System.out.println("Hello world!");
++    public static void main(String[] args) throws SQLException {
++
++        System.out.println("\n----Welcome to the library management system UOK!----\n");
++
++        Library library = new Library();
++
++        library.mainMenu();
++        int option = library.validateChoice(1, 7);
++
++        while (option!=7) {
++            switch(option) {
++                case 1:
++//                    library.addNewBook();
++                    break;
++                case 2:
++//                    library.updateBook();
++                    break;
++                case 3:
++//                    library.removeBook();
++                    break;
++                case 4:
++                    library.lendBook();
++                    break;
++                case 5:
++                    library.returnBook();
++                    break;
++                case 6:
++//                    library.listAllBooks();
++                    break;
++            }
++
++            library.mainMenu();
++            option = library.validateChoice(1, 7);
++        }
++
++
+     }
+ }
+\ No newline at end of file
+Index: src/Book.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Book {\r\n    private String isbn;\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Book.java b/src/Book.java
+--- a/src/Book.java	(revision 240267ea5df5cfba26abcccd7eb7c4290d6de04d)
++++ b/src/Book.java	(date 1689999861818)
+@@ -1,3 +1,4 @@
+ public class Book {
+     private String isbn;
++
+ }
+Index: JuniorHack 5.0 - TechWarriors.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JuniorHack 5.0 - TechWarriors.iml b/JuniorHack 5.0 - TechWarriors.iml
+--- a/JuniorHack 5.0 - TechWarriors.iml	(revision 240267ea5df5cfba26abcccd7eb7c4290d6de04d)
++++ b/JuniorHack 5.0 - TechWarriors.iml	(date 1690001526395)
+@@ -7,5 +7,14 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module-library">
++      <library>
++        <CLASSES>
++          <root url="jar://$MODULE_DIR$/lib/mysql-connector-j-8.0.32.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64\" name=\"Changes\" comment=\"initial commit\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Book.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/plan.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/plan.txt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2SuZuJTSdVLJL0i7EGEpNDYhq8q\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/dhars/JuniorHack 5.0 - TechWarriors\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\dhars\\JuniorHack 5.0 - TechWarriors\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64\" name=\"Changes\" comment=\"\" />\r\n      <created>1689998649679</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1689998649679</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"initial commit\">\r\n      <created>1689998969167</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1689998969167</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"initial commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"initial commit\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 240267ea5df5cfba26abcccd7eb7c4290d6de04d)
++++ b/.idea/workspace.xml	(date 1690001860781)
+@@ -4,10 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="initial commit">
+-      <change afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
++    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="db structure added">
++      <change afterPath="$PROJECT_DIR$/src/DBConnection.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/demo.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/plan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/plan.txt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/JuniorHack 5.0 - TechWarriors.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JuniorHack 5.0 - TechWarriors.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,7 +41,10 @@
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "last_opened_file_path": "C:/Users/dhars/JuniorHack 5.0 - TechWarriors"
++    "last_opened_file_path": "C:/Users/dhars/JuniorHack 5.0 - TechWarriors/lib/mysql-connector-j-8.0.32.jar",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0"
+   }
+ }]]></component>
+   <component name="RecentsManager">
+@@ -61,11 +68,19 @@
+       <option name="project" value="LOCAL" />
+       <updated>1689998969167</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="db structure added">
++      <created>1689999759691</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1689999759691</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="initial commit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
++    <MESSAGE value="db structure added" />
++    <option name="LAST_COMMIT_MESSAGE" value="db structure added" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/demo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/demo.java b/src/demo.java
+new file mode 100644
+--- /dev/null	(date 1690001860347)
++++ b/src/demo.java	(date 1690001860347)
+@@ -0,0 +1,9 @@
++public class demo {
++    public static void main(String[] args) {
++        double num = 12345;
++
++        int n = (int) Math.round((Math.log10(num))) + 1;
++
++        System.out.println(n);
++    }
++}
+Index: src/Library.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Library.java b/src/Library.java
+new file mode 100644
+--- /dev/null	(date 1690001790127)
++++ b/src/Library.java	(date 1690001790127)
+@@ -0,0 +1,138 @@
++import java.sql.Connection;
++import java.sql.ResultSet;
++import java.sql.SQLException;
++import java.sql.Statement;
++import java.util.InputMismatchException;
++import java.util.Scanner;
++
++class InvalidInputException extends Exception{
++    public InvalidInputException(String message) {
++        super(message);
++    }
++}
++
++public class Library {
++
++    static Scanner scan = new Scanner(System.in);
++
++    public int validateChoice(int start, int end) {
++
++        int choice = -1;
++        boolean isValid = false;
++
++        while(!isValid) {
++            try {
++                choice = scan.nextInt();
++                if (choice<start || choice>end) {
++                    throw new InvalidInputException("Enter a valid choice between " + start + " and " + end + ": ");
++                }
++                isValid = true;
++            }
++            catch (InvalidInputException e) {
++                System.out.print(e.getMessage());
++            }
++            catch (InputMismatchException e) {
++                System.out.print("Enter an integer: ");
++            }
++            finally {
++                scan.nextLine();
++            }
++        }
++
++        return choice;
++
++    }
++
++    public boolean confirm() {
++        System.out.print("\nConfirm (y/n) : ");
++        String input = scan.next();
++
++        while (!input.equalsIgnoreCase("y") && !input.equalsIgnoreCase("n")) {
++            System.out.print("Enter a valid choice: ");
++            input = scan.next();
++        }
++        return input.equalsIgnoreCase("y");
++    }
++
++    public void mainMenu() {
++
++        System.out.println("1. Add a new book\n" +
++                "2. Update an existing book\n" +
++                "3. Remove an existing book\n" +
++                "4. Lend a book\n" +
++                "5. Return a book\n" +
++                "6. List all available books\n" +
++                "7. Exit");
++
++        System.out.print("Please select an option: ");
++    }
++
++
++    public void lendBook() throws SQLException {
++        System.out.println("\n----Lend a Book----");
++        System.out.print("Enter the ISBN: ");
++        int isbn = scan.nextInt();
++
++        Connection connection = DBConnection.getConnection();
++        Statement statement = connection.createStatement();
++
++        String query1 = "select * from book where isbn = " + isbn;
++
++        ResultSet result = statement.executeQuery(query1);
++
++        if (result.next()) {
++            String query2 = "update book set isAvailable = 'Not Available' where isbn = " + isbn;
++            int rows = statement.executeUpdate(query2);
++            if (rows>0) {
++                System.out.println("You have lend the book successfully!\n");
++            }
++            else {
++                System.out.println("error");
++            }
++        }
++        else {
++            System.out.println("Sorry, There is no book in the library with the given isbn.");
++        }
++
++        connection.close();
++        statement.close();
++    }
++
++
++    public void returnBook() throws SQLException {
++        System.out.println("\n----Return a Book----");
++        System.out.print("Enter the ISBN: ");
++        int isbn = scan.nextInt();
++
++        Connection connection = DBConnection.getConnection();
++        Statement statement = connection.createStatement();
++
++        String query1 = "select * from book where isbn = " + isbn;
++
++        ResultSet result = statement.executeQuery(query1);
++
++        if (result.next()) {
++            String query2 = "update book set isAvailable = 'Available' where isbn = " + isbn;
++            int rows = statement.executeUpdate(query2);
++            if (rows>0) {
++                System.out.println("You have return the book successfully!\n");
++            }
++            else {
++                System.out.println("error");
++            }
++        }
++        else {
++            System.out.println("Sorry, There is no book in the library with the given isbn.");
++        }
++
++        connection.close();
++        statement.close();
++
++    }
++
++
++
++
++
++
++}
+Index: src/DBConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DBConnection.java b/src/DBConnection.java
+new file mode 100644
+--- /dev/null	(date 1690000913112)
++++ b/src/DBConnection.java	(date 1690000913112)
+@@ -0,0 +1,13 @@
++import java.sql.Connection;
++import java.sql.DriverManager;
++import java.sql.SQLException;
++
++public class DBConnection {
++    private static final String url = "jdbc:mysql://localhost:3306/Library";
++    private static final String username = "root";
++    private static final String password = "2001@";//give your password
++
++    public static Connection getConnection() throws SQLException {
++        return DriverManager.getConnection(url, username, password);
++    }
++}

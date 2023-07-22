@@ -15,7 +15,7 @@ public class ThuvaFinal{
         System.out.println();
         System.out.println("Are you sure you want to remove this book?(Y/N)");
         confirm = scan.nextLine();
-        if (confirm.equalsIgnoreCase('Y')) {
+        if (confirm.equalsIgnoreCase(",y")) {
             Connection conn = DbConnection.getConnection();
             String query = "delete from book where isbn = " + isbnNum;
 
@@ -35,7 +35,7 @@ public class ThuvaFinal{
         ResultSet rs = st.executeQuery(query);
 
         while(rs.next()){
-            System.out.println(rs.getInt(2)+"-"+rs.getString(3)+"-"+rs.getString(4)+"-"+rs.getString(5);
+            System.out.println(rs.getInt(2)+"-"+rs.getString(3)+"-"+rs.getString(4)+"-"+rs.getString(5));
         }
         st.close();
     }

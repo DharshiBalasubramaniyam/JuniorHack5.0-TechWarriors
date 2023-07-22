@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="removeBook and listAllBooks done">
-      <change afterPath="$PROJECT_DIR$/src/Thuva.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThuvaFinal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fb0d5fbe-8e2b-45c1-a674-fc9c4721dc64" name="Changes" comment="removeBook and listAllBooks done final">
+      <change beforePath="$PROJECT_DIR$/src/ThuvaFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThuvaFinal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +56,20 @@
       <option name="project" value="LOCAL" />
       <updated>1690002360472</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removeBook and listAllBooks done final">
+      <created>1690003148962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1690003148962</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="removeBook and listAllBooks done" />
-    <option name="LAST_COMMIT_MESSAGE" value="removeBook and listAllBooks done" />
+    <MESSAGE value="removeBook and listAllBooks done final" />
+    <option name="LAST_COMMIT_MESSAGE" value="removeBook and listAllBooks done final" />
   </component>
 </project>

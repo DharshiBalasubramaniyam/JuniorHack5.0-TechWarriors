@@ -20,6 +20,7 @@ Book = bookId, -isbn
                -title
                -category
                -author
+               is available
 
 
 
